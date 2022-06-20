@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
 import MapUi from "../components/MapUi";
-function search({searchResults}) {
+function Search({searchResults}) {
     const router = useRouter()
     console.log(router.query)
     const {location, endDate, startDate,guest} = router.query
@@ -35,10 +35,10 @@ function search({searchResults}) {
         </div>
 
         {
-            searchResults.map((item) =>(
-        <div className="mb-10">
+            searchResults.map((item,index) =>(
+        <div className="mb-10" key={index}>
                 <InfoCard
-                key={item.img}
+                
                 img={item.img}
                 location={item.location}
                 title={item.title}
@@ -61,7 +61,7 @@ function search({searchResults}) {
   )
 }
 
-export default search
+export default Search
 
 export async function getServerSideProps(){
     const searchResults = await fetch("https://links.papareact.com/isz")

@@ -4,6 +4,7 @@ function Banner() {
   return (
     <div className='relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]'>
         <Image
+        alt='Banner Image'
         src={'https://a0.muscache.com/im/pictures/8aa32150-e831-40aa-98f5-b743b44c6b27.jpg?im_w=960'}
         layout='fill'
         objectFit='cover'

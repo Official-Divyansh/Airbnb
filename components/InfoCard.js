@@ -6,6 +6,7 @@ export default function InfoCard({img,location,title,description,star,price,tota
     <div className='flex'>
         <div className='relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0'>
             <Image 
+            alt='card'
             src={img}
             layout="fill"
             objectFit='cover'

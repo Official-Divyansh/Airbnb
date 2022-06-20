@@ -26,8 +26,10 @@ export default function Home({exploreData,cardData}) {
               <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
 
               {
-                exploreData.map((item)=>{
-                  return <SmallCard img={item.img} location={item.location} 
+                exploreData.map((item, index)=>{
+                  return <SmallCard 
+                  key={index}
+                  img={item.img} location={item.location} 
                   distance={item.distance}
                   />
                 })
@@ -39,8 +41,10 @@ export default function Home({exploreData,cardData}) {
               <h2 className='text-4xl font-semibold py-8'>Live Anywhere</h2>
               <div className='flex space-x-3 overflow-scroll scrollbar-hide'>
               {
-                cardData.map((item)=>{
-                  return <MediumCard img={item.img} title={item.title} />
+                cardData.map((item, index)=>{
+                  return <MediumCard
+                  key={index}
+                   img={item.img} title={item.title} />
                 })
               }
               </div>

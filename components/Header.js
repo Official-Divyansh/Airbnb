@@ -41,6 +41,7 @@ function Header({placeholder}) {
         <div className='relative flex items-center h-10 cursor-pointer my-auto'
        >
         <Image
+        alt='Header'
          src={logo}
          layout="fill"
          objectFit='contain'
