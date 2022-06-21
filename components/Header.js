@@ -1,17 +1,17 @@
-import Image from 'next/image'
-import logo from './assets/logo.png'
+import Image from "next/image"
+import logo from "./assets/logo.png"
 import {SearchIcon,GlobeAltIcon, MenuIcon, UserCircleIcon, UserIcon} from '@heroicons/react/solid'
-import 'react-date-range/dist/styles.css'; 
-import 'react-date-range/dist/theme/default.css';
-import { useState } from 'react';
-import { DateRangePicker } from 'react-date-range';
-import { useRouter } from 'next/router';
+import "react-date-range/dist/styles.css"; 
+import "react-date-range/dist/theme/default.css";
+import { useState } from "react";
+import { DateRangePicker } from "react-date-range";
+import { useRouter } from "next/router";
 
 function Header({placeholder}) {
   const [search, setSearch] = useState("")
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
-  const [noOfGuest, setNoOfGuest] = useState('')
+  const [noOfGuest, setNoOfGuest] = useState("")
   const router = useRouter()
  function handleSelect(ranges){
   setStartDate(ranges.selection.startDate)
@@ -21,7 +21,7 @@ function Header({placeholder}) {
   const selectionRange = {
     startDate: startDate,
     endDate: endDate,
-    key: 'selection',
+    key: "selection",
   }
 
   const searchQuery = ()=>{
@@ -46,14 +46,14 @@ function Header({placeholder}) {
          layout="fill"
          objectFit='contain'
          objectPosition="left"
-         onClick={()=> router.push('/')}
+         onClick={()=> router.push("/")}
         />
        
         
         </div>
 
         <div className='flex items-center md:border-2 rounded-full py-2 md:shadow-sm'>
-            <input type={search} placeholder={ placeholder || 'Start your search'}
+            <input type={search} placeholder={ placeholder || "Start your search"}
             onChange={(e)=> setSearch(e.target.value)}
             className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-600' />
             <SearchIcon className='hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2' />
@@ -75,7 +75,7 @@ function Header({placeholder}) {
             <DateRangePicker
             ranges={[selectionRange]}
             minDate={new Date()}
-            rangeColors={['#FD5B61']}
+            rangeColors={["#FD5B61"]}
             onChange={handleSelect}
             />
             <div className='flex items-center border-b mb-4'>
@@ -92,7 +92,7 @@ function Header({placeholder}) {
             />
             </div>
             <div className='flex'>
-              <button onClick={()=> setSearch('')} className='flex-grow text-gray-500'>Cancel</button>
+              <button onClick={()=> setSearch("")} className='flex-grow text-gray-500'>Cancel</button>
               <button onClick={searchQuery} className='flex-grow text-red-500'>Search</button>
             </div>
             </div>

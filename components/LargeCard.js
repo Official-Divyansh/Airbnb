@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image"
 function LargeCard({img}) {
   return (
     <section className='relative py-16 cursor-pointer'>
